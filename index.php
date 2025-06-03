@@ -38,15 +38,21 @@ $galeri = $conn->query("SELECT * FROM galeri ORDER BY created_at DESC LIMIT 8");
       height: 100vh;
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
+      text-align: left;
       color: white;
       padding: 2rem;
     }
-    .hero h1 {
-      font-size: 3rem;
-      animation: fadeInDown 1s ease-in-out;
+    .hero-text {
+      max-width: 700px;
+      margin-left: 5%;
     }
+    .hero h1 {
+  font-size: 3rem;
+  /* Tambahkan atau ubah baris ini */
+  font-weight: 700; /* Ini akan membuatnya sangat tebal, sesuai dengan font Inter yang diimpor */
+  animation: fadeInDown 1s ease-in-out;
+}
+    
     .hero p {
       font-size: 1.3rem;
       margin-top: 0.5rem;
@@ -160,6 +166,10 @@ $galeri = $conn->query("SELECT * FROM galeri ORDER BY created_at DESC LIMIT 8");
       .jadwal-tabs {
         flex-direction: column;
       }
+      .hero-text {
+        margin-left: 0;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -167,9 +177,9 @@ $galeri = $conn->query("SELECT * FROM galeri ORDER BY created_at DESC LIMIT 8");
 
 <!-- HERO -->
 <section class="hero">
-  <div>
-    <h1>SELAMAT DATANG DI WEBSITE NAFA</h1>
-    <p>Pusat latihan kebugaran dan keterampilan terbaik untuk semua kalangan</p>
+  <div class="hero-text">
+    <h1>Surabaya Pencak Kordo Manyuro - 1938</h1>
+    <p>SPKM (Surabaya Pencak Kordo Manyuro) adalah salah satu perguruan pencak silat di Indonesia asal kota Surabaya yang berdiri sejak tahun 1938</p>
   </div>
 </section>
 
@@ -177,7 +187,7 @@ $galeri = $conn->query("SELECT * FROM galeri ORDER BY created_at DESC LIMIT 8");
 <div class="container">
 
   <!-- SAMBUTAN -->
-  <h2 class="section-title">Sambutan Ketua Umum</h2>
+  <h2 class="section-title">Sambutan Ketua Organisasi</h2>
   <?php if ($sambutan): ?>
     <div class="card sambutan">
       <div class="sambutan-content">

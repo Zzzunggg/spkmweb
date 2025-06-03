@@ -1,16 +1,16 @@
 <?php
 $siteTitle = "Admin";
-$siteTagline = "Tahun 0000";
+$siteTagline = "admin";
 
 $menus = [
   'admin_banner.php' => 'Upload Banner',
+  'upload_materi.php' => 'Upload Materi',
   'admin_upload_materi.php' => 'Upload materi PDF',
   'upload_data_kegiatan.php' => 'Data Kegiatan',
-  'upload_materi.php' => 'Upload Materi',
-  'prestasi.php' => 'Prestasi',
   'pelatih.php' => 'Data Pelatih',
   'anggota.php' => 'Data Anggota',
   'jadwal_latihan.php' => 'Jadwal Latihan',
+  'prestasi.php' => 'Prestasi',
   'upload_sambutan.php' => 'Sambutan Ketua',
   'upload_galeri.php' => 'Galeri',
   'struktur_organisasi.php' => 'Struktur Organisasi',
@@ -58,7 +58,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
   </aside>
 
   <!-- Mobile Header -->
-  <div class="sm:hidden fixed top-0 left-0 w-full bg-gradient-to-r from-lime-500 to-emerald-700 text-white border-b shadow z-50 flex justify-between items-center px-4 py-3">
+  <div class="sm:hidden fixed top-0 left-0 w-full bg-emerald-800 text-white border-b shadow z-50 flex justify-between items-center px-4 py-3">
     <div class="flex items-center">
       <div class="ml-2">
         <h1 class="font-semibold text-lg"><?php echo $siteTitle; ?></h1>

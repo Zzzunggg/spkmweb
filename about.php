@@ -43,9 +43,9 @@ if ($result && $result->num_rows > 0) {
       font-weight: 700;
     }
 
-    .container {
+    .content-center {
       max-width: 960px;
-      margin: auto;
+      margin: 0 auto;
       padding: 3rem 1rem;
     }
 
@@ -54,8 +54,7 @@ if ($result && $result->num_rows > 0) {
       font-weight: 700;
       margin-bottom: 2rem;
       color: #333;
-      border-left: 5px solid #4caf50;
-      padding-left: 1rem;
+      text-align: center;
     }
 
     .card {
@@ -74,17 +73,22 @@ if ($result && $result->num_rows > 0) {
     .card p {
       margin-bottom: 1.2rem;
       font-size: 1.1rem;
+      text-align: justify;
     }
 
-    .card ul {
-      padding-left: 1.5rem;
+    .struktur-ketua-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
     }
 
     .struktur-wrapper {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 1.5rem;
     }
+
     .struktur-card {
       background: white;
       text-align: center;
@@ -93,9 +97,11 @@ if ($result && $result->num_rows > 0) {
       box-shadow: 0 6px 16px rgba(0,0,0,0.05);
       transition: 0.2s ease;
     }
+
     .struktur-card:hover {
       transform: translateY(-4px);
     }
+
     .struktur-foto {
       width: 110px;
       height: 110px;
@@ -104,10 +110,12 @@ if ($result && $result->num_rows > 0) {
       border: 3px solid #4caf50;
       margin-bottom: 0.8rem;
     }
+
     .struktur-card h3 {
       font-size: 1.1rem;
       font-weight: 600;
     }
+
     .struktur-card p {
       font-size: 0.95rem;
       color: #555;
@@ -131,38 +139,56 @@ if ($result && $result->num_rows > 0) {
   </div>
 </section>
 
-<!-- ABOUT -->
-<div class="container">
+<!-- ISI KONTEN -->
+<div class="content-center">
+
+  <!-- TENTANG KAMI -->
   <h2 class="section-title">Tentang Kami</h2>
   <div class="card">
-    <p>Elite Training Center adalah pusat latihan bela diri dan kebugaran yang berdedikasi untuk membina generasi yang sehat, tangguh, dan berkarakter. Kami menyediakan program latihan dari tingkat dasar hingga mahir, yang dirancang oleh pelatih profesional dan berpengalaman.</p>
-    <p>Dengan fasilitas yang lengkap dan lingkungan yang mendukung, kami percaya bahwa setiap individu dapat mencapai potensi terbaiknya. Elite Training Center tidak hanya mengedepankan kekuatan fisik, tetapi juga kedisiplinan, mental baja, dan semangat kebersamaan.</p>
-    <p>Visi kami adalah menjadi pusat pelatihan terdepan di Indonesia yang mampu mencetak atlet-atlet berprestasi serta membentuk pribadi yang tangguh dan bertanggung jawab.</p>
-    <p>Misi kami mencakup:</p>
-    <ul>
-      <li>Menyediakan pelatihan berkualitas untuk semua tingkatan usia dan kemampuan.</li>
-      <li>Membangun komunitas yang solid dan suportif.</li>
-      <li>Melahirkan generasi pemimpin yang sehat secara fisik dan mental.</li>
-    </ul>
+    <p>
+      Perguruan Silat SPKM (Surabaya Pencak Kordo Manyuro) merupakan salah satu perguruan pencak silat tertua dan berpengaruh di Indonesia. Didirikan pada tahun 1938 di Salatiga, Jawa Tengah, SPKM lahir dari semangat para pendekar tempo dulu untuk melestarikan warisan seni bela diri asli Nusantara yang kaya nilai budaya, spiritualitas, dan kearifan lokal. Seiring berjalannya waktu, SPKM berkembang pesat dan kini dikenal luas di berbagai daerah, khususnya di kota Surabaya. Perguruan ini menjadi rumah bagi para pesilat dari berbagai generasi, yang tidak hanya belajar teknik bela diri, tetapi juga dibina dalam hal kedisiplinan, etika, dan penguatan karakter. Nama Kordo Manyuro dalam SPKM mengandung filosofi mendalam. "Kordo" dimaknai sebagai jalan atau laku, sementara "Manyuro" berasal dari bahasa Jawa yang merujuk pada kekuatan batin dan pengendalian diri. Maka dari itu, SPKM tidak hanya mengajarkan kekuatan fisik, tetapi juga menanamkan nilai-nilai spiritual, rasa hormat kepada guru, serta kepedulian terhadap sesama dan lingkungan.
+    </p>
   </div>
 
   <!-- STRUKTUR ORGANISASI -->
   <h2 class="section-title">Struktur Organisasi</h2>
-  <div class="struktur-wrapper">
-    <?php
-    $result = $conn->query("SELECT * FROM struktur_organisasi ORDER BY id ASC");
-    if ($result && $result->num_rows > 0):
-      while ($row = $result->fetch_assoc()):
-    ?>
-    <div class="struktur-card">
-      <img src="admin/uploads/<?= htmlspecialchars($row['foto']) ?>" alt="<?= htmlspecialchars($row['nama']) ?>" class="struktur-foto" />
-      <h3><?= htmlspecialchars($row['nama']) ?></h3>
-      <p><?= htmlspecialchars($row['jabatan']) ?></p>
+
+  <?php
+    $query = $conn->query("SELECT * FROM struktur_organisasi ORDER BY id ASC");
+    $ketua = null;
+    $anggota = [];
+
+    while ($row = $query->fetch_assoc()) {
+      if (stripos($row['jabatan'], 'ketua umum') !== false) {
+        $ketua = $row;
+      } else {
+        $anggota[] = $row;
+      }
+    }
+  ?>
+
+  <!-- Ketua -->
+  <?php if ($ketua): ?>
+    <div class="struktur-ketua-container">
+      <div class="struktur-card">
+        <img src="admin/uploads/<?= htmlspecialchars($ketua['foto']) ?>" alt="<?= htmlspecialchars($ketua['nama']) ?>" class="struktur-foto" />
+        <h3><?= htmlspecialchars($ketua['nama']) ?></h3>
+        <p><?= htmlspecialchars($ketua['jabatan']) ?></p>
+      </div>
     </div>
-    <?php endwhile; else: ?>
-      <p>Tidak ada data struktur organisasi.</p>
-    <?php endif; ?>
+  <?php endif; ?>
+
+  <!-- Anggota -->
+  <div class="struktur-wrapper">
+    <?php foreach ($anggota as $row): ?>
+      <div class="struktur-card">
+        <img src="admin/uploads/<?= htmlspecialchars($row['foto']) ?>" alt="<?= htmlspecialchars($row['nama']) ?>" class="struktur-foto" />
+        <h3><?= htmlspecialchars($row['nama']) ?></h3>
+        <p><?= htmlspecialchars($row['jabatan']) ?></p>
+      </div>
+    <?php endforeach; ?>
   </div>
+
 </div>
 
 <?php include 'footer.php'; ?>

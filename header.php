@@ -18,6 +18,9 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 <!DOCTYPE html>
 <html lang="id">
 <head>
+  <!-- Di dalam <head> -->
+
+
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title><?php echo $siteTitle; ?></title>

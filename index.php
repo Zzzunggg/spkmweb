@@ -140,6 +140,7 @@ $galeri = $conn->query("SELECT * FROM galeri ORDER BY created_at DESC LIMIT 8");
             justify-content: center;
             font-size: 1.2rem;
             font-weight: 500;
+            object-fit: cover;
         }
         
         .img-1 {
@@ -239,26 +240,44 @@ $galeri = $conn->query("SELECT * FROM galeri ORDER BY created_at DESC LIMIT 8");
         }
 
 
-        /* GALERI (Styling disesuaikan sedikit agar konsisten) */
+        /* === [PERBAIKAN FINAL] GALERI DENGAN UKURAN TETAP === */
         .galeri-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Agar gambar di tengah */
+            gap: 1rem;
         }
+        
         .galeri-item {
+            /* KUNCI UTAMA: Memberi ukuran lebar yang pasti */
+            width: 200px; 
+            
+            /* Mencegah gambar membesar atau mengecil otomatis */
+            flex-grow: 0;
+            flex-shrink: 0;
+
+            /* Menjaga bentuk agar tidak gepeng */
+            aspect-ratio: 4 / 3;
+            
             position: relative;
             overflow: hidden;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
-            aspect-ratio: 4/3;
-            background-color: #e0e0e0;
             transition: transform 0.3s ease;
+            background-color: #e0e0e0;
         }
+        
         .galeri-item:hover {
             transform: scale(1.05);
         }
+        
         .galeri-item img {
-            width: 100%; height: 100%; object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ini yang mencegah gambar gepeng */
         }
 
 
@@ -293,7 +312,7 @@ include 'header.php';
     <div class="hero-text">
         <h1 data-aos="fade-down">Surabaya Pencak Kordo Manyuro - 1938</h1>
         <p data-aos="fade-up" data-aos-delay="100">SPKM (Surabaya Pencak Kordo Manyuro) adalah salah satu perguruan pencak silat di Indonesia asal kota Surabaya yang berdiri sejak tahun 1938.</p>
-        <a href="#prestasi" class="cta-button" data-aos="fade-up" data-aos-delay="200">Lihat Prestasi</a>
+        
     </div>
 </section>
 
@@ -301,8 +320,11 @@ include 'header.php';
     <section id="sejarah" class="container">
         <div class="sejarah-grid">
             <div class="sejarah-images" data-aos="fade-right">
-                <div class="image-stack-item img-1">Foto Kegiatan 1</div>
-                <div class="image-stack-item img-2">Foto Kegiatan 2</div>
+                <div class="sejarah-images" data-aos="fade-right">
+    <img src="admin/uploads/galeri/juara budokai.png" class="image-stack-item img-1" alt="Kegiatan 1">
+    <img src="admin/uploads/galeri/image.png" class="image-stack-item img-2" alt="Kegiatan 2">
+</div>
+
             </div>
             <div class="sejarah-content" data-aos="fade-left">
                 <h2>Sejarah Perguruan Silat SPKM Kordo Manyuro</h2>
@@ -399,6 +421,10 @@ include 'footer.php';
         offset: 50,
     });
 </script>
+
+**Langkah Terakhir yang Sangat Penting:**
+
+Setelah mengganti kode, **WAJIB** bersihkan cache browser Anda dengan menekan **Ctrl + F5** (di Windows/Linux) atau **Cmd + Shift + R** (di Mac). Jika ini tidak dilakukan, browser akan terus menampilkan CSS lama.
 
 </body>
 </html>

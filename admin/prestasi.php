@@ -1,4 +1,4 @@
-<?php include 'proses/auth_admin.php';?>
+
 <?php
 ob_start();           // Mulai output buffering supaya header() bisa dipanggil kapan saja
 session_start();

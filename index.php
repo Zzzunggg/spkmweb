@@ -422,9 +422,6 @@ include 'footer.php';
     });
 </script>
 
-**Langkah Terakhir yang Sangat Penting:**
-
-Setelah mengganti kode, **WAJIB** bersihkan cache browser Anda dengan menekan **Ctrl + F5** (di Windows/Linux) atau **Cmd + Shift + R** (di Mac). Jika ini tidak dilakukan, browser akan terus menampilkan CSS lama.
 
 </body>
 </html>

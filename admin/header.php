@@ -39,7 +39,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 
 <div class="flex min-h-screen">
   <!-- Sidebar -->
-  <aside class="w-64 bg-gradient-to-b from-lime-500 to-emerald-700 text-white hidden sm:block">
+  <aside class="w-64 bg-green-700 text-white hidden sm:block">
     <div class="p-6 border-b border-lime-400">
       <div class="flex items-center">
         <div class="ml-3">

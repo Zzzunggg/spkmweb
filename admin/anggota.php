@@ -1,3 +1,4 @@
+<?php include 'proses/auth_admin.php';?>
 <?php
 // Sertakan file koneksi dan header
 include '../koneksi/koneksi.php'; 

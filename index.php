@@ -167,7 +167,8 @@ $galeri = $conn->query("SELECT * FROM galeri ORDER BY created_at DESC LIMIT 8");
             line-height: 1.3;
         }
 
-        /* === BAGIAN PRESTASI & AKTIVITAS (BARU) === */
+        /* CSS untuk Prestasi & Aktivitas bisa dihapus jika tidak ada elemen lain yang menggunakannya */
+        /* Namun untuk sementara dibiarkan agar tidak merusak style lain */
         .prestasi-grid {
             display: grid;
             grid-template-columns: 1.5fr 1fr;
@@ -321,10 +322,9 @@ include 'header.php';
         <div class="sejarah-grid">
             <div class="sejarah-images" data-aos="fade-right">
                 <div class="sejarah-images" data-aos="fade-right">
-    <img src="admin/uploads/galeri/juara budokai.png" class="image-stack-item img-1" alt="Kegiatan 1">
-    <img src="admin/uploads/galeri/image.png" class="image-stack-item img-2" alt="Kegiatan 2">
-</div>
-
+                    <img src="admin/uploads/galeri/juara budokai.png" class="image-stack-item img-1" alt="Kegiatan 1">
+                    <img src="admin/uploads/galeri/image.png" class="image-stack-item img-2" alt="Kegiatan 2">
+                </div>
             </div>
             <div class="sejarah-content" data-aos="fade-left">
                 <h2>Sejarah Perguruan Silat SPKM Kordo Manyuro</h2>
@@ -334,58 +334,6 @@ include 'header.php';
                     <p>SPKM (Surabaya Pencak Kordo Manyuro) adalah perguruan silat historis yang berpengaruh di Indonesia. Sejak didirikan pada tahun 1938 di Surabaya oleh Almarhum Bapak Soedirman, SPKM telah melahirkan banyak pendekar dan atlet yang berprestasi.</p>
                     <p>Tekad yang kuat serta semangat yang tak pernah padam dari para anggota senior maupun yunior, SPKM Kordo Manyuro berkembang dan berhasil membuka cabang-cabang baru di berbagai daerah, menunjukkan dedikasi dalam melestarikan budaya pencak silat.</p>
                 <?php endif; ?>
-            </div>
-        </div>
-    </section>
-
-    <section id="prestasi" class="container">
-        <h2 class="section-title" data-aos="fade-up">Prestasi & Aktivitas</h2>
-        <div class="prestasi-grid">
-            <div class="prestasi-list" data-aos="fade-right">
-                <div class="prestasi-card">
-                    <div class="prestasi-card-img">Prestasi 1</div>
-                    <div class="prestasi-card-info">
-                        <h4>Diangkat di Tuban</h4>
-                        <p>Reguler</p>
-                    </div>
-                </div>
-                <div class="prestasi-card">
-                    <div class="prestasi-card-img">Prestasi 2</div>
-                    <div class="prestasi-card-info">
-                        <h4>Kejuaraan Pelajar se-Wilayah Surabaya</h4>
-                        <p>Turnamen</p>
-                    </div>
-                </div>
-                <div class="prestasi-card">
-                    <div class="prestasi-card-img">Prestasi 3</div>
-                    <div class="prestasi-card-info">
-                        <h4>Latihan Gabungan se-Jawa Timur</h4>
-                        <p>Event</p>
-                    </div>
-                </div>
-            </div>
-            <div class="jadwal-list" data-aos="fade-left" data-aos-delay="200">
-                <a href="#" class="jadwal-card-horizontal">
-                    <div class="jadwal-info">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>Jadwal Latihan Gabungan</span>
-                    </div>
-                    <i class="fas fa-chevron-right arrow"></i>
-                </a>
-                <a href="#" class="jadwal-card-horizontal">
-                    <div class="jadwal-info">
-                        <i class="fas fa-trophy"></i>
-                        <span>Info Kejuaraan</span>
-                    </div>
-                    <i class="fas fa-chevron-right arrow"></i>
-                </a>
-                <a href="#" class="jadwal-card-horizontal">
-                    <div class="jadwal-info">
-                        <i class="fas fa-file-alt"></i>
-                        <span>Materi Ujian Kenaikan</span>
-                    </div>
-                    <i class="fas fa-chevron-right arrow"></i>
-                </a>
             </div>
         </div>
     </section>

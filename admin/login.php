@@ -1,10 +1,7 @@
 <?php
 session_start();
 include '../koneksi/koneksi.php'; // koneksi database dengan variabel $conn
-if (isset($_SESSION['username'])) {
-    header('Location: admin_banner.php'); 
-    exit;
-}
+
 $message = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

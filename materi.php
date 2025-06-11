@@ -44,7 +44,7 @@ if ($result && $result->num_rows > 0) {
         
         <div class="accordion-item active">
             <button class="accordion-toggle" aria-expanded="true">
-                Daftar Materi Tingkat Dasar
+                Sabuk Putih
                 <span class="icon" aria-hidden="true">▾</span>
             </button>
             <div class="accordion-content">
@@ -58,26 +58,70 @@ if ($result && $result->num_rows > 0) {
 
         <div class="accordion-item">
             <button class="accordion-toggle" aria-expanded="false">
-                Daftar Materi Tingkat Menengah
+                Sabuk Kuning
                 <span class="icon" aria-hidden="true">▸</span>
             </button>
             <div class="accordion-content">
                 <ul>
-                    <li><a href="materi_menengah.php#pukulan-tangkisan">Kombinasi Pukulan dan Tangkisan</a></li>
-                    <li><a href="materi_menengah.php#tendangan">Tendangan Dasar dan Samping</a></li>
+                    <li><a href="materi_kuning.php#pukulan-dasar">Pukulan Dasar (Lurus & Bandul)</a></li>
+                    <li><a href="materi_kuning.php#tendangan-dasar">Tendangan Dasar (Depan)</a></li>
+                    <li><a href="materi_kuning.php#elakan-dasar">Elakan Dasar</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="accordion-item">
             <button class="accordion-toggle" aria-expanded="false">
-                Daftar Materi Tingkat Mahir
+                Sabuk Hijau
                 <span class="icon" aria-hidden="true">▸</span>
             </button>
             <div class="accordion-content">
                 <ul>
-                    <li><a href="materi_mahir.php#sapuan-kuncian">Teknik Sapuan dan Kuncian</a></li>
-                    <li><a href="materi_mahir.php#seni-gerakan">Seni Gerakan Jurus</a></li>
+                    <li><a href="materi_hijau.php#kombinasi-gerak">Kombinasi Pukulan dan Tangkisan</a></li>
+                    <li><a href="materi_hijau.php#tendangan-samping">Tendangan Samping dan Belakang</a></li>
+                    <li><a href="materi_hijau.php#jurus-tangan-kosong">Jurus Tangan Kosong 1-3</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <button class="accordion-toggle" aria-expanded="false">
+                Sabuk Hitam
+                <span class="icon" aria-hidden="true">▸</span>
+            </button>
+            <div class="accordion-content">
+                <ul>
+                    <li><a href="materi_hitam.php#teknik-kuncian">Teknik Kuncian Dasar</a></li>
+                    <li><a href="materi_hitam.php#teknik-jatuhan">Teknik Jatuhan dan Bantingan</a></li>
+                    <li><a href="materi_hitam.php#jurus-senjata">Dasar Jurus Senjata (Golok/Toya)</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <button class="accordion-toggle" aria-expanded="false">
+                Sabuk Kuning Emas
+                <span class="icon" aria-hidden="true">▸</span>
+            </button>
+            <div class="accordion-content">
+                <ul>
+                     <li><a href="materi_emas.php#kuncian-lanjutan">Kuncian Lanjutan</a></li>
+                    <li><a href="materi_emas.php#pemecahan-kuncian">Teknik Pemecahan Kuncian</a></li>
+                    <li><a href="materi_emas.php#jurus-master">Jurus Master Tangan Kosong</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="accordion-item">
+            <button class="accordion-toggle" aria-expanded="false">
+                Sabuk Merah
+                <span class="icon" aria-hidden="true">▸</span>
+            </button>
+            <div class="accordion-content">
+                <ul>
+                    <li><a href="materi_merah.php#filosofi-gerak">Filosofi Gerakan Pencak Silat</a></li>
+                    <li><a href="materi_merah.php#tenaga-dalam">Dasar Pernapasan dan Tenaga Dalam</a></li>
+                    <li><a href="materi_merah.php#aplikasi-beladiri">Aplikasi Praktis Bela Diri</a></li>
                 </ul>
             </div>
         </div>
@@ -138,6 +182,7 @@ include 'footer.php';
 ?>
 
 <script>
+// Tidak ada perubahan pada JavaScript, fungsionalitas akordeon tetap sama.
 document.addEventListener('DOMContentLoaded', function () {
     const accordionItems = document.querySelectorAll('.accordion-item');
 

@@ -1,25 +1,26 @@
-
 <?php
 $siteTitle = "Admin";
 $siteTagline = "admin";
 
+// === BAGIAN YANG DIUBAH ===
 $menus = [
-  'admin_banner.php' => 'Upload Banner',
-  'upload_materi.php' => 'Upload Materi',
-  'admin_upload_materi.php' => 'Upload materi PDF',
-  'upload_data_kegiatan.php' => 'Data Kegiatan',
-  'pelatih.php' => 'Data Pelatih',
-  'anggota.php' => 'Data Anggota',
-  'jadwal_latihan.php' => 'Jadwal Latihan',
-  'prestasi.php' => 'Prestasi',
-  'upload_sambutan.php' => 'Sambutan Ketua',
-  'upload_galeri.php' => 'Galeri',
-  'struktur_organisasi.php' => 'Struktur Organisasi',
-  'kontak.php' => 'Contact',
-  'login.php' => 'Login',
-  'register.php' => 'Daftar Akun',
-  'logout.php' => 'Log Out'
+    'admin_banner.php' => 'Upload Banner',
+    'admin_materi.php' => 'Manajemen Materi Detail', // <-- LINK LAMA DIGANTI DENGAN INI
+    'upload_data_kegiatan.php' => 'Data Kegiatan',
+    'pelatih.php' => 'Data Pelatih',
+    'anggota.php' => 'Data Anggota',
+    'jadwal_latihan.php' => 'Jadwal Latihan',
+    'prestasi.php' => 'Prestasi',
+    'upload_sambutan.php' => 'Sambutan Ketua',
+    'upload_galeri.php' => 'Galeri',
+    'struktur_organisasi.php' => 'Struktur Organisasi',
+    'kontak.php' => 'Contact',
+    'login.php' => 'Login',
+    'register.php' => 'Daftar Akun',
+    'logout.php' => 'Log Out'
 ];
+// ==========================
+
 
 $currentPage = basename($_SERVER['PHP_SELF']);
 ?>
@@ -39,7 +40,6 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 <body class="bg-gray-100">
 
 <div class="flex min-h-screen">
-  <!-- Sidebar -->
   <aside class="w-64 bg-green-700 text-white hidden sm:block">
     <div class="p-6 border-b border-lime-400">
       <div class="flex items-center">
@@ -58,7 +58,6 @@ $currentPage = basename($_SERVER['PHP_SELF']);
     </nav>
   </aside>
 
-  <!-- Mobile Header -->
   <div class="sm:hidden fixed top-0 left-0 w-full bg-emerald-800 text-white border-b shadow z-50 flex justify-between items-center px-4 py-3">
     <div class="flex items-center">
       <div class="ml-2">
@@ -69,7 +68,6 @@ $currentPage = basename($_SERVER['PHP_SELF']);
     <button id="mobileToggle" class="text-white text-2xl"><i class="fas fa-bars"></i></button>
   </div>
 
-  <!-- Mobile Sidebar -->
   <div id="mobileSidebar" class="sm:hidden fixed top-16 left-0 w-64 h-full bg-gradient-to-b from-lime-500 to-emerald-700 text-white shadow-lg transform -translate-x-full transition-transform duration-300 z-40">
     <nav class="p-4 space-y-2 text-sm">
       <?php foreach ($menus as $url => $label): ?>
@@ -80,6 +78,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
     </nav>
   </div>
 
-  <!-- Main Content -->
   <main class="flex-1 p-6 mt-16 sm:mt-0">
-    <!-- === ISI HALAMAN DI SINI === -->
+    ```
+
+

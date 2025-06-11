@@ -49,9 +49,9 @@ if ($result && $result->num_rows > 0) {
             </button>
             <div class="accordion-content">
                 <ul>
-                    <li><a href="materi_dasar.php">Kuda-Kuda Dasar</a></li>
-                    <li><a href="materi_dasar.php#tangkisan-dasar">Tangkisan Dasar</a></li>
-                    <li><a href="materi_dasar.php#langkah-segitiga" aria-current="page">Jurus Dasar Langkah Segitiga</a></li>
+                    <li><a href="materi_putih.php">Kuda-Kuda Dasar</a></li>
+                    <li><a href="materi_putih.php#tangkisan-dasar">Tangkisan Dasar</a></li>
+                    <li><a href="materi_putih.php#langkah-segitiga" aria-current="page">Jurus Dasar Langkah Segitiga</a></li>
                 </ul>
             </div>
         </div>

@@ -2,7 +2,7 @@
 session_start();
 include '../koneksi/koneksi.php';
 // include 'header_admin.php';
-
+include 'header.php';
 // --- Konfigurasi dan Diagnosis Otomatis ---
 $pdf_upload_dir_name = 'materi_pdf';
 $gambar_upload_dir_name = 'gambar_materi';
